@@ -10,10 +10,11 @@ function App() {
 
     const formData = new FormData();
     
-    formData.append('File', file);
+    formData.append('file', file);
 
     fetch('http://localhost:4200/api/image-upload', {
       method: 'POST',
+      mode: "cors",
       body: formData
     }).then((res) => res.json()).then(() => {
       console.log("Success");
